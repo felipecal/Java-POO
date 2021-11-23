@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class Lista {
     public static ArrayList<Metodos> Lavanderia = new ArrayList<>();
     public static ArrayList<Metodos> Em_Uso = new ArrayList<>();
-    public static ArrayList<Metodos> Cor = new ArrayList<>();
+    public static ArrayList<Metodos> Guarda_Roupas = new ArrayList<>();
 
     public static ArrayList<Metodos> getVestimenta() {
         return Lavanderia;
@@ -28,8 +28,8 @@ public class Lista {
         return Em_Uso;
     }
 
-    public static ArrayList<Metodos> getCor() {
-        return Cor;
+    public static ArrayList<Metodos> getGuardaRoupas() {
+        return Guarda_Roupas;
     }
     
     static public void adicionarLavanderia (Metodos l){
@@ -38,8 +38,8 @@ public class Lista {
     static public void adicionarEmUso (Metodos l){
         Em_Uso.add(l);
     }
-    static public void adicionarCor (Metodos l){
-        Cor.add(l);
+    static public void adicionarGuardaRoupas (Metodos l){
+        Guarda_Roupas.add(l);
     }
     
     static public String listarLavanderia(){
@@ -60,10 +60,10 @@ public class Lista {
         }
         return saida;
     }
-    static public String listarCor(){
+    static public String listarGuardaRoupas(){
         String saida = "";
         int i = 1;
-        for (Metodos l : Cor){
+        for (Metodos l : Guarda_Roupas){
             saida += "\n Cor: " + (i++);
             saida += l.imprimir() + "\n";
         }
@@ -90,10 +90,10 @@ public class Lista {
         }
         return qtd;
     }
-    static public int pesquisarCor (String tipo){
+    static public int pesquisarGuardaRoupas (String tipo){
         int qtd = 0;
         
-        for(Metodos l : Cor){
+        for(Metodos l : Guarda_Roupas){
             if (l.getTipo().equalsIgnoreCase(tipo)){
                 qtd++;
             }
@@ -119,10 +119,10 @@ public class Lista {
         }
         return false;
     }
-    static public boolean removerCor (String tipo){
-        for (Metodos l : Cor){
+    static public boolean removerGuardaRoupas (String tipo){
+        for (Metodos l : Guarda_Roupas){
             if(l.getTipo().equalsIgnoreCase(tipo)){
-                Cor.remove(l);
+                Guarda_Roupas.remove(l);
                 return true;
             }
         }
