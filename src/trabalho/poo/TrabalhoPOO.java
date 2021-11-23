@@ -48,7 +48,7 @@ public class TrabalhoPOO {
                                 + "\nSocial"
                                 + "\nEsporte"
                                 + "\nEsporte Fino"
-                                + "\nTrablaho ");
+                                + "\nTrabalho ");
                         tipo = entradaString.nextLine();
                         System.out.println("Cor: ");
                         cor = entradaString.nextLine();
@@ -58,10 +58,8 @@ public class TrabalhoPOO {
                         tecido = entradaString.nextLine();
                         System.out.println("Preço: ");
                         preco = entrada.nextFloat();
-                        System.out.println("Escreva alguns dos seguintes estados que a roupa se encontra:"
-                                + "\nNo guarda-roupas"
-                                + "\nEm uso "
-                                + "\nNa lavanderia");
+                        System.out.println("Estado da roupa:"
+                                + "\nEscreva *Lavanderia* nessa opção");
                         estado = entradaString.nextLine();
                         objLista = new  Metodos(tipo, cor, numero, tecido, preco, estado);
                         Lista.adicionarLavanderia(objLista);
@@ -72,7 +70,7 @@ public class TrabalhoPOO {
                                 + "\nSocial"
                                 + "\nEsporte"
                                 + "\nEsporte Fino"
-                                + "\nTrablaho ");
+                                + "\nTrabalho ");
                         tipo = entradaString.nextLine();
                         System.out.println("Cor: ");
                         cor = entradaString.nextLine();
@@ -82,10 +80,8 @@ public class TrabalhoPOO {
                         tecido = entradaString.nextLine();
                         System.out.println("Preço: ");
                         preco = entrada.nextFloat();
-                        System.out.println("Escreva alguns dos seguintes estados que a roupa se encontra:"
-                                + "\nNo guarda-roupas"
-                                + "\nEm uso "
-                                + "\nNa lavanderia");
+                        System.out.println("Estado da roupa:"
+                                + "\nEscreva *Em uso* nessa opção");
                         estado = entradaString.nextLine();
                         objLista = new  Metodos(tipo, cor, numero, tecido, preco, estado);
                         Lista.adicionarEmUso(objLista);
@@ -96,7 +92,7 @@ public class TrabalhoPOO {
                                 + "\nSocial"
                                 + "\nEsporte"
                                 + "\nEsporte Fino"
-                                + "\nTrablaho ");
+                                + "\nTrabalho ");
                         tipo = entradaString.nextLine();
                         System.out.println("Cor: ");
                         cor = entradaString.nextLine();
@@ -106,10 +102,8 @@ public class TrabalhoPOO {
                         tecido = entradaString.nextLine();
                         System.out.println("Preço: ");
                         preco = entrada.nextFloat();
-                        System.out.println("Escreva alguns dos seguintes estados que a roupa se encontra:"
-                                + "\nNo guarda-roupas"
-                                + "\nEm uso "
-                                + "\nNa lavanderia");
+                        System.out.println("Estado da roupa:"
+                                + "\nEscreva *Guarda-roupas* nessa opção");
                         estado = entradaString.nextLine();
                         objLista = new  Metodos(tipo, cor, numero, tecido, preco, estado);
                         Lista.adicionarGuardaRoupas(objLista);

@@ -55,7 +55,7 @@ public class Lista {
         String saida = "";
         int i = 1;
         for (Metodos l : Em_Uso){
-            saida += "\n Em uso: " + (i++);
+            saida += "\nEm uso: " + (i++);
             saida += l.imprimir() + "\n";
         }
         return saida;
@@ -64,7 +64,7 @@ public class Lista {
         String saida = "";
         int i = 1;
         for (Metodos l : Guarda_Roupas){
-            saida += "\n Cor: " + (i++);
+            saida += "\nGuarda-Roupas: " + (i++);
             saida += l.imprimir() + "\n";
         }
         return saida;
