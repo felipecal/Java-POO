@@ -20,13 +20,14 @@ public class TrabalhoPOO {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
         Scanner entradaString = new Scanner(System.in);
+        int resposta = 0;
         int respost = 0;
         int menu;
+        String k;
         Metodos objLista;
         
-        String tipo, cor, numero, tecido, estado;
+        String idt, tipo, cor, numero, tecido, estado;
         float preco;
-        
         do {            
             exibirMenu();
             menu = entrada.nextInt();
@@ -44,6 +45,8 @@ public class TrabalhoPOO {
                     if (respost <1 || respost>3){System.out.println("Erro!!");
                     }
                     else if (respost ==1){
+                        System.out.println("Digite o identificador da roupa:");
+                        idt = entradaString.nextLine();
                         System.out.println("Escreva alguns dos tipos de roupas:"
                                 + "\nSocial"
                                 + "\nEsporte"
@@ -52,7 +55,7 @@ public class TrabalhoPOO {
                         tipo = entradaString.nextLine();
                         System.out.println("Cor: ");
                         cor = entradaString.nextLine();
-                        System.out.println("Numero do manequim:");
+                        System.out.println("Numero do manequim: ");
                         numero = entradaString.nextLine();
                         System.out.println("Tecido com o qual é feito: ");
                         tecido = entradaString.nextLine();
@@ -61,11 +64,13 @@ public class TrabalhoPOO {
                         System.out.println("Estado da roupa:"
                                 + "\nEscreva *Lavanderia* nessa opção");
                         estado = entradaString.nextLine();
-                        objLista = new  Metodos(tipo, cor, numero, tecido, preco, estado);
+                        objLista = new  Metodos(idt,tipo, cor, numero, tecido, preco, estado);
                         Lista.adicionarLavanderia(objLista);
                         System.out.println(Lista.listarLavanderia());
                     }
                     else if (respost ==2){
+                        System.out.println("Digite o identificador da roupa:");
+                        idt = entradaString.nextLine();
                         System.out.println("Escreva alguns dos tipos de roupas:"
                                 + "\nSocial"
                                 + "\nEsporte"
@@ -83,11 +88,13 @@ public class TrabalhoPOO {
                         System.out.println("Estado da roupa:"
                                 + "\nEscreva *Em uso* nessa opção");
                         estado = entradaString.nextLine();
-                        objLista = new  Metodos(tipo, cor, numero, tecido, preco, estado);
+                        objLista = new  Metodos(idt,tipo, cor, numero, tecido, preco, estado);
                         Lista.adicionarEmUso(objLista);
                         System.out.println(Lista.listarEmUso());
                     }
                     else if (respost ==3){
+                        System.out.println("Digite o identificador da roupa:");
+                        idt = entradaString.nextLine();
                         System.out.println("Escreva alguns dos tipos de roupas:"
                                 + "\nSocial"
                                 + "\nEsporte"
@@ -105,12 +112,52 @@ public class TrabalhoPOO {
                         System.out.println("Estado da roupa:"
                                 + "\nEscreva *Guarda-roupas* nessa opção");
                         estado = entradaString.nextLine();
-                        objLista = new  Metodos(tipo, cor, numero, tecido, preco, estado);
+                        objLista = new  Metodos(idt,tipo, cor, numero, tecido, preco, estado);
                         Lista.adicionarGuardaRoupas(objLista);
                         System.out.println(Lista.listarGuardaRoupas());
                     }
                     break;
                 case 2:
+                    System.out.println("Deseja excluir de qual das opções: "
+                            + "\n1 - Lavanderia"
+                            + "\n2 - Em Uso"
+                            + "\n3 - GuardaRoupas");
+                    respost = entrada.nextInt();
+                    if (respost <1 || respost>3){System.out.println("Erro!!");
+                    }
+                    else if (respost ==1){
+                        if ( ! (Lista.getLavanderia().isEmpty())){
+                            System.out.println(Lista.listarLavanderia());
+                            System.out.println("\n Digite o identificador da roupa que deseja exlcuir\n");
+                            idt = entradaString.nextLine();
+                            if (Lista.removerLavanderia(idt)){
+                                System.out.println("Roupa removida com sucesso!\n");
+                           }else{System.out.println("Roupa não encontrada!\n");}
+                        }else{
+                            System.out.println("\nNão existem roupas na lavanderia.\n");}
+                    }
+                    else if (respost ==2){
+                        if ( ! (Lista.getEmUso().isEmpty())){
+                            System.out.println(Lista.listarEmUso());
+                            System.out.println("\n Digite o identificador da roupa que deseja exlcuir\n");
+                            idt = entradaString.nextLine();
+                            if (Lista.removerEmUso(idt)){
+                                System.out.println("Roupa removida com sucesso!\n");
+                           }else{System.out.println("Roupa não encontrada!\n");}
+                        }else{
+                            System.out.println("\nNão existem roupas em uso.\n");}
+                    }
+                    else if (respost ==3){
+                        if ( ! (Lista.getGuardaRoupas().isEmpty())){
+                            System.out.println(Lista.listarGuardaRoupas());
+                            System.out.println("\n Digite o identificador da roupa que deseja exlcuir\n");
+                            idt = entradaString.nextLine();
+                            if (Lista.removerGuardaRoupas(idt)){
+                                System.out.println("Roupa removida com sucesso!\n");
+                           }else{System.out.println("Roupa não encontrada!\n");}
+                        }else{
+                            System.out.println("\nNão existem roupas no guarda-roupas.\n");}
+                    }
                     break;
                 case 3:
                     System.out.println("Listagem de roupas na lavanderia");

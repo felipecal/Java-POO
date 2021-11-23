@@ -9,6 +9,7 @@ package trabalho.poo;
  * @author caldas
  */
 public class Metodos {
+    private String idt;
     private String tipo;
     private String cor;
     private String numero;
@@ -17,13 +18,22 @@ public class Metodos {
     private String estado;
     
 
-    public Metodos(String tipo, String cor, String numero, String tecido, Float preco, String estado) {
+    public Metodos(String idt, String tipo, String cor, String numero, String tecido, Float preco, String estado) {
+        this.idt = idt;
         this.tipo = tipo;
         this.cor = cor;
         this.numero = numero;
         this.tecido = tecido;
         this.preco = preco;
         this.estado = estado;
+    }
+
+    public String getIdt() {
+        return idt;
+    }
+
+    public void setIdt(String idt) {
+        this.idt = idt;
     }
 
     public String getTipo() {
@@ -75,6 +85,6 @@ public class Metodos {
     }
     
     public String imprimir(){
-        return  "\nTipo: " + tipo +"\nCor:" + cor + "\nNumero: " + numero + "\nTecido: " + tecido + "\nPreço: " + preco + "\nEstado: " + estado;
+        return  "\nIdentificador:" + idt + "\nTipo: " + tipo +"\nCor: " + cor + "\nNumero: " + numero + "\nTecido: " + tecido + "\nPreço: " + preco + "\nEstado: " + estado;
     }
 }

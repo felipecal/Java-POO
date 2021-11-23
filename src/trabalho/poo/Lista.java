@@ -20,7 +20,7 @@ public class Lista {
     public static ArrayList<Metodos> Em_Uso = new ArrayList<>();
     public static ArrayList<Metodos> Guarda_Roupas = new ArrayList<>();
 
-    public static ArrayList<Metodos> getVestimenta() {
+    public static ArrayList<Metodos> getLavanderia() {
         return Lavanderia;
     }
 
@@ -44,9 +44,8 @@ public class Lista {
     
     static public String listarLavanderia(){
         String saida = "";
-        int i = 1;
         for (Metodos l : Lavanderia){
-            saida += "\nLavanderia: \n" + (i++);
+            saida += "\nLavanderia: \n";
             saida += l.imprimir() + "\n";
         }
         return saida;
@@ -101,27 +100,27 @@ public class Lista {
         return qtd;
     }
     
-    static public boolean removerLavanderia (String tipo){
+    static public boolean removerLavanderia (String idt){
         for (Metodos l : Lavanderia){
-            if(l.getTipo().equalsIgnoreCase(tipo)){
+            if(l.getIdt().equalsIgnoreCase(idt)){
                 Lavanderia.remove(l);
                 return true;
             }
         }
         return false;
     }
-    static public boolean removerEmUso (String tipo){
+    static public boolean removerEmUso (String idt){
         for (Metodos l : Em_Uso){
-            if(l.getTipo().equalsIgnoreCase(tipo)){
+            if(l.getIdt().equalsIgnoreCase(idt)){
                 Em_Uso.remove(l);
                 return true;
             }
         }
         return false;
     }
-    static public boolean removerGuardaRoupas (String tipo){
+    static public boolean removerGuardaRoupas (String idt){
         for (Metodos l : Guarda_Roupas){
-            if(l.getTipo().equalsIgnoreCase(tipo)){
+            if(l.getIdt().equalsIgnoreCase(idt)){
                 Guarda_Roupas.remove(l);
                 return true;
             }
