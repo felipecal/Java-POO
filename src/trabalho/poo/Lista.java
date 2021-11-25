@@ -69,37 +69,6 @@ public class Lista {
         return saida;
     }
     
-    static public int pesquisarLavanderia (String tipo){
-        int qtd = 0;
-        
-        for(Metodos l : Lavanderia){
-            if (l.getTipo().equalsIgnoreCase(tipo)){
-                qtd++;
-            }
-        }
-        return qtd;
-    }
-    static public int pesquisarEmUso (String tipo){
-        int qtd = 0;
-        
-        for(Metodos l : Em_Uso){
-            if (l.getTipo().equalsIgnoreCase(tipo)){
-                qtd++;
-            }
-        }
-        return qtd;
-    }
-    static public int pesquisarGuardaRoupas (String tipo){
-        int qtd = 0;
-        
-        for(Metodos l : Guarda_Roupas){
-            if (l.getTipo().equalsIgnoreCase(tipo)){
-                qtd++;
-            }
-        }
-        return qtd;
-    }
-    
     static public boolean removerLavanderia (String idt){
         for (Metodos l : Lavanderia){
             if(l.getIdt().equalsIgnoreCase(idt)){
@@ -126,14 +95,6 @@ public class Lista {
             }
         }
         return false;
-    }
-    
-    static double calcularTotalLista(){
-        double total = 0;
-        for (Metodos l : Lavanderia){
-            total += l.getPreco();
-        }
-        return total;
     }
 }
 

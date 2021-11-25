@@ -20,13 +20,10 @@ public class TrabalhoPOO {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
         Scanner entradaString = new Scanner(System.in);
-        int resposta = 0;
         int respost = 0;
         int menu;
-        String k;
         Metodos objLista;
-        
-        String idt, tipo, cor, numero, tecido, estado;
+        String idt, tipo, cor, numero, tecido;
         float preco;
         do {            
             exibirMenu();
@@ -61,10 +58,7 @@ public class TrabalhoPOO {
                         tecido = entradaString.nextLine();
                         System.out.println("Preço: ");
                         preco = entrada.nextFloat();
-                        System.out.println("Estado da roupa:"
-                                + "\nEscreva *Lavanderia* nessa opção");
-                        estado = entradaString.nextLine();
-                        objLista = new  Metodos(idt,tipo, cor, numero, tecido, preco, estado);
+                        objLista = new  Metodos(idt,tipo, cor, numero, tecido, preco);
                         Lista.adicionarLavanderia(objLista);
                         System.out.println(Lista.listarLavanderia());
                     }
@@ -85,10 +79,7 @@ public class TrabalhoPOO {
                         tecido = entradaString.nextLine();
                         System.out.println("Preço: ");
                         preco = entrada.nextFloat();
-                        System.out.println("Estado da roupa:"
-                                + "\nEscreva *Em uso* nessa opção");
-                        estado = entradaString.nextLine();
-                        objLista = new  Metodos(idt,tipo, cor, numero, tecido, preco, estado);
+                        objLista = new  Metodos(idt,tipo, cor, numero, tecido, preco);
                         Lista.adicionarEmUso(objLista);
                         System.out.println(Lista.listarEmUso());
                     }
@@ -109,10 +100,7 @@ public class TrabalhoPOO {
                         tecido = entradaString.nextLine();
                         System.out.println("Preço: ");
                         preco = entrada.nextFloat();
-                        System.out.println("Estado da roupa:"
-                                + "\nEscreva *Guarda-roupas* nessa opção");
-                        estado = entradaString.nextLine();
-                        objLista = new  Metodos(idt,tipo, cor, numero, tecido, preco, estado);
+                        objLista = new  Metodos(idt,tipo, cor, numero, tecido, preco);
                         Lista.adicionarGuardaRoupas(objLista);
                         System.out.println(Lista.listarGuardaRoupas());
                     }

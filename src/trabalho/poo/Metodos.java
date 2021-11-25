@@ -15,17 +15,15 @@ public class Metodos {
     private String numero;
     private String tecido;
     private Float preco;
-    private String estado;
     
 
-    public Metodos(String idt, String tipo, String cor, String numero, String tecido, Float preco, String estado) {
+    public Metodos(String idt, String tipo, String cor, String numero, String tecido, Float preco) {
         this.idt = idt;
         this.tipo = tipo;
         this.cor = cor;
         this.numero = numero;
         this.tecido = tecido;
         this.preco = preco;
-        this.estado = estado;
     }
 
     public String getIdt() {
@@ -75,16 +73,8 @@ public class Metodos {
     public void setPreco(Float preco) {
         this.preco = preco;
     }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
     
     public String imprimir(){
-        return  "\nIdentificador:" + idt + "\nTipo: " + tipo +"\nCor: " + cor + "\nNumero: " + numero + "\nTecido: " + tecido + "\nPreço: " + preco + "\nEstado: " + estado;
+        return  "\nIdentificador:" + idt + "\nTipo: " + tipo +"\nCor: " + cor + "\nNumero: " + numero + "\nTecido: " + tecido + "\nPreço: " + preco ;
     }
 }
